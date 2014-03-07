@@ -15,8 +15,9 @@ class ForgeParser < Parser
       url, parameters = url.split('?')
 	
       email, app, app_type, org, loc, country = user.split(" ")
-            
-      add_activity(:block => 'sites', :name => server.name, :size => size.to_i) # Size of activity based on size of request
+      bar,app = app.split("=")
+      app,bar = app.split(",")      
+      #add_activity(:block => 'sites', :name => server.name, :size => size.to_i) # Size of activity based on size of request
       add_activity(:block => 'urls', :name => url)
       add_activity(:block => 'users', :name => app, :size => size.to_i + time.to_i)
       add_activity(:block => 'hosts', :name => machine)
@@ -28,7 +29,8 @@ class ForgeParser < Parser
       add_activity(:block => 'warnings', :name => "#{status}: #{url}") if status.to_i > 400
 
       # Events to pop up
-      add_event(:block => 'info', :name => "Imports", :message => "Import...", :update_stats => true, :color => [1.5, 1.0, 0.5, 1.0]) if method == "POST" && url.include?('import')
+      add_event(:block => 'info', :name => "TVA Import", :message => "TVA Import...", :update_stats => true, :color => [1.5, 1.0, 0.5, 1.0]) if method == "POST" && url.include?('/import/tva')
+      add_event(:block => 'info', :name => "TVA Update", :message => "TVA Update...", :update_stats => true, :color => [1.5, 1.0, 0.5, 1.0]) if method == "POST" && url.include?('/update/tva')
       add_event(:block => 'info', :name => "Interlinking", :message => "Interlinking...", :update_stats => true, :color => [1.5, 0.0, 0.0, 1.0]) if method == "POST" && url.include?('/mrss')
       add_event(:block => 'info', :name => "Deletes", :message => "Deletes...", :update_stats => true, :color => [1.0, 1.0, 1.0, 1.0]) if method == "DELETE"
     end
