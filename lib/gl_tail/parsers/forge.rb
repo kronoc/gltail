@@ -13,14 +13,16 @@ class ForgeParser < Parser
       method, url, http_version = url.split(" ")
       url = method if url.nil?
       url, parameters = url.split('?')
-
+	
+      email, app, app_type, org, loc, country = user.split(" ")
+            
       add_activity(:block => 'sites', :name => server.name, :size => size.to_i) # Size of activity based on size of request
       add_activity(:block => 'urls', :name => url)
-      add_activity(:block => 'users', :name => user, :size => size.to_i)
-      add_activity(:block => 'machines', :name => machine)
+      add_activity(:block => 'users', :name => app, :size => size.to_i + time.to_i)
+      add_activity(:block => 'hosts', :name => machine)
 
       type = 'page'
-      add_activity(:block => 'content', :name => "xml")
+      add_activity(:block => 'content', :name => method)
       add_activity(:block => 'status', :name => status, :type => 3) # don't show a blob
 
       add_activity(:block => 'warnings', :name => "#{status}: #{url}") if status.to_i > 400
