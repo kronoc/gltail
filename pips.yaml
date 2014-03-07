@@ -5,7 +5,7 @@ servers:
         host: pips.bbc
         source: local
         files: /Users/conor/logs/pips-live.log
-        parser: apache
+        parser: forge
         color: 0.2, 0.2, 1.0, 1.0
 config:
     dimensions: 1200x600
