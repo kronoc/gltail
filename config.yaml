@@ -1,21 +1,10 @@
 servers:
-    site1:
-        host: foobar.com
-        user: foo
-        password: topsecret
-        command: tail -f -n0
-        files: /var/log/apache/access_log
+    dev:
+	host: api.live.bbc.co.uk
+        source: local
+        files: /Users/conor/logs/pips-live.log
         parser: apache
         color: 0.2, 1.0, 0.2, 1.0
-    rails:
-        gateway: gw-server.anotherfunsite.com
-        host: anotherfunsite.com
-        user: anotherfunuser
-        port: 222
-        command: tail -f -n0
-        files: /var/www/apps/funapp/current/log/production.log
-        parser: rails
-        color: 0.2, 0.2, 1.0, 1.0
 config:
     dimensions: 1200x600
     min_blob_size: 0.004

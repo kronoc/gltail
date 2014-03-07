@@ -15,8 +15,8 @@ require 'opengl'
 require 'gl'
 require 'glut'
 
-require 'net/ssh'
-require 'net/ssh/gateway'
+#require 'net/ssh'
+#require 'net/ssh/gateway'
 
 require 'file/tail'
 
@@ -33,7 +33,7 @@ require 'gl_tail/config/yaml_parser'
 # sources represent event sources defaults to ssh tail
 # future options: JMS queue, spread.org, local tail, etc
 require 'gl_tail/sources/base'
-require 'gl_tail/sources/ssh'
+#require 'gl_tail/sources/ssh'
 require 'gl_tail/sources/local'
 
 %w(version engine activity block item element parser resolver blob_store font_store).each {|f| require "gl_tail/#{f}" }

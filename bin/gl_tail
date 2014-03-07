@@ -73,8 +73,9 @@ elsif !File.exist?(file)
        "  gl_tail --new #{file}"
   exit
 end
-
+$LOAD_PATH.unshift(File.dirname(__FILE__) + '/../lib')
 require File.dirname(__FILE__) + '/../lib/gl_tail.rb'
+#require '/Users/conor/src/open/gltail/lib/gl_tail.rb'
 
 if defined? @print
   case @print

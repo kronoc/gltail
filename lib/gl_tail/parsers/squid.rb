@@ -16,9 +16,9 @@ class SquidParser < Parser
         add_activity(:block => 'hosts', :name => host, :size => size)
         add_activity(:block => 'types', :name => method, :size => size) if method
         _, site = /http:\/\/(.+?)\/.+/.match(uri).to_a
-        if site
-          add_activity(:block => 'sites', :name => site, :size => size)
-        end
+        #if site
+        #  add_activity(:block => 'sites', :name => site, :size => size)
+        #end
       end
     end
   end

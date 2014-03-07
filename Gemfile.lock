@@ -4,7 +4,7 @@ PATH
     gltail (0.1.9)
       chipmunk
       file-tail
-      net-ssh (>= 1.1.4)
+      net-ssh 
       net-ssh-gateway
       opengl (~> 0.8.0)
 
