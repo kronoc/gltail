@@ -8,7 +8,7 @@
 class ForgeParser < Parser
   def parse( line )
     _, host, user, domain, date, url, status, size, referrer, useragent = /([\d\S.]+) (\S+) (\S+) \[([^\]]+)\] \"(.+?)\" (\d+) ([\S]+) \"([^\"]+)\" \"([^\"]+)\"/.match(line).to_a
-
+#(\[([^\]]+)\]) (\d+) \"(.+?)\" (\d+) (\d+) \"(.+?)\" \"(.+?)\" 
     unless host
       _, host, user, domain, date, url, status, size = /([\d\S.]+) (\S+) (\S+) \[([^\]]+)\] \"(.+?)\" (\d+) ([\S]+)/.match(line).to_a
     end
