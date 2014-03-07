@@ -7,7 +7,7 @@
 # Parser which handles access_logs in combined format from Forge
 class ForgeParser < Parser
   def parse( line )
-    _, host, date, time, url, status, size, foo, useragent, machine, user = /(.+\d) - - (\[([^\]]+)\]) (\d+) \"(.+?)\" (\d+) (\d+) \"(-)\" \"(.+?)\" (.+\d) \"(.+?)\"/.match(line).to_a
+    _, host, date, date2, time, url, status, size, foo, useragent, machine, user = /(.+\d) - - (\[([^\]]+)\]) (\d+) \"(.+?)\" (\d+) (\d+) \"(-)\" \"(.+?)\" (.+\d) \"(.+?)\"/.match(line).to_a
 
     if host
       method, url, http_version = url.split(" ")
