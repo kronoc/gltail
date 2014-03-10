@@ -13,10 +13,8 @@ class ForgeParser < Parser
       method, url, http_version = url.split(" ")
       url = method if url.nil?
       url, parameters = url.split('?')
-	
-      email, app, app_type, org, loc, country = user.split(" ")
-      bar,app = app.split("=")
-      app,bar = app.split(",")      
+
+      _, app = /CN=(.+?),/.match(user).to_a	
       #add_activity(:block => 'sites', :name => server.name, :size => size.to_i) # Size of activity based on size of request
       add_activity(:block => 'urls', :name => url)
       add_activity(:block => 'users', :name => app, :size => size.to_i + time.to_i)
