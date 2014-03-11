@@ -32,7 +32,7 @@ class ForgeParser < Parser
       add_activity(:block => 'hosts', :name => subnet)
 
       type = 'page'
-      add_activity(:block => 'methods', :name => method)
+      add_activity(:block => 'methods', :name => method) if method.match(/^[[:upper:]]+$/)
       add_activity(:block => 'status', :name => status, :type => 3) # don't show a blob
 
       add_activity(:block => 'warnings', :name => "#{status}: #{url}") if status.to_i > 400
