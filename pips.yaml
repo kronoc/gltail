@@ -23,7 +23,7 @@ config:
                 auto_clean: false
                 show: total
             hosts:
-                order: 1
+                order: 2
                 size: 20
             sites:
                 order: 2
@@ -42,7 +42,7 @@ config:
                 size: 5
                 color: 1.0, 0.4, 0.2, 1.0
             users:
-                order: 6
+                order: 1
                 size: 30
             smtp:
                 order: 7
@@ -149,5 +149,5 @@ config:
                 color: 0.5, 0.5, 0.5, 0.5
 
 resolver:
-    reverse_ip_lookups: false
+    reverse_ip_lookups: true
     reverse_timeout: 0.5
