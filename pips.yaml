@@ -4,14 +4,14 @@ servers:
     dev:
         host: pips.bbc
         source: local
-        files: /Users/conor/logs/pips-live.log
+        files: /Users/conor/logs/pips-live.pipe
         parser: forge
         color: 0.2, 0.2, 1.0, 1.0
 config:
     dimensions: 1200x600
     min_blob_size: 0.004
     max_blob_size: 0.04
-    highlight_color: orange
+    highlight_color: green
     bounce: true
     left_column:
         size: 25
@@ -19,16 +19,16 @@ config:
         blocks:
             info:
                 order: 0
-                size: 10
+                size: 15
                 auto_clean: false
                 show: total
             hosts:
                 order: 1
-                size: 3
+                size: 20
             sites:
                 order: 2
-                size: 10
-            content:
+                size: 15
+            methods:
                 order: 3
                 size: 5
                 show: total
@@ -43,7 +43,7 @@ config:
                 color: 1.0, 0.4, 0.2, 1.0
             users:
                 order: 6
-                size: 10
+                size: 30
             smtp:
                 order: 7
                 size: 5
@@ -93,7 +93,7 @@ config:
         blocks:
             urls:
                 order: 0
-                size: 15
+                size: 25
             slow requests:
                 order: 1
                 size: 5
@@ -120,7 +120,7 @@ config:
                 color: 1.0, 0.2, 0.2, 1.0
             warnings:
                 order: 8
-                size: 5
+                size: 10
             destinationinterface:
                 order: 9
                 size: 15
@@ -138,7 +138,7 @@ config:
                 size: 15
             info:
                 order: 13
-                size: 15
+                size: 20
                 auto_clean: false
                 show: total
             agents:
@@ -149,5 +149,5 @@ config:
                 color: 0.5, 0.5, 0.5, 0.5
 
 resolver:
-    reverse_ip_lookups: true
+    reverse_ip_lookups: false
     reverse_timeout: 0.5
