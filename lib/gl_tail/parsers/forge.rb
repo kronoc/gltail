@@ -14,7 +14,11 @@ class ForgeParser < Parser
       url = method if url.nil?
       url, parameters = url.split('?')
 
-      _, app = /CN=(.+?),/.match(user).to_a	
+      _, app = /CN=(.+?),/.match(user).to_a
+      _, email = /Email=(.+)/.match(user).to_a 
+      if app == "client"
+        app = email
+      end	
       #add_activity(:block => 'sites', :name => server.name, :size => size.to_i) # Size of activity based on size of request
       add_activity(:block => 'urls', :name => url)
       add_activity(:block => 'users', :name => app, :size => size.to_i + time.to_i)
