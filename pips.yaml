@@ -32,7 +32,7 @@ config:
                 order: 3
                 size: 5
                 show: total
-                color: 1.0, 0.8, 0.4, 1.0
+                color: orange
             status:
                 order: 4
                 size: 10
@@ -44,6 +44,7 @@ config:
             users:
                 order: 1
                 size: 30
+                color: cyan
             smtp:
                 order: 7
                 size: 5
@@ -94,6 +95,7 @@ config:
             urls:
                 order: 0
                 size: 25
+                color: white
             slow requests:
                 order: 1
                 size: 5
@@ -104,7 +106,7 @@ config:
             user agents:
                 order: 3
                 size: 5
-                color: 1.0, 1.0, 1.0, 1.0
+                color: green 
             mail from:
                 order: 4
                 size: 5
